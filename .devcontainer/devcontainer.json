@@ -1,0 +1,17 @@
+{
+    "name": "JupyterLab DevContainer",
+    "image": "jupyter/scipy-notebook",
+    "features": {},
+    "forwardPorts": [8888],
+    "postCreateCommand": "pip install jupyterlab && jupyter lab --generate-config",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    },
+    "remoteUser": "jovyan"
+}
+
