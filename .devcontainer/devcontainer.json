@@ -1,17 +1,16 @@
 {
-    "name": "JupyterLab DevContainer",
-    "image": "jupyter/scipy-notebook",
-    "features": {},
-    "forwardPorts": [8888],
-    "postCreateCommand": "pip install jupyterlab && jupyter lab --generate-config",
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "ms-python.python",
-                "ms-toolsai.jupyter"
-            ]
-        }
-    },
-    "remoteUser": "jovyan"
+  "name": "JupyterLab DevContainer",
+  "image": "jupyter/scipy-notebook",
+  "features": {},
+  "forwardPorts": [8888],
+  "postCreateCommand": "jupyter lab --generate-config && jupyter notebook --generate-config && echo \"c.ServerApp.allow_origin = '*'\" >> ~/.jupyter/jupyter_server_config.py && echo \"c.NotebookApp.allow_origin = '*'\" >> ~/.jupyter/jupyter_notebook_config.py && echo \"c.ServerApp.token = ''\" >> ~/.jupyter/jupyter_server_config.py && echo \"c.NotebookApp.token = ''\" >> ~/.jupyter/jupyter_notebook_config.py",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  },
+  "remoteUser": "jovyan"
 }
-
